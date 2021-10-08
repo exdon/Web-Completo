@@ -1,0 +1,5 @@
+.index--recipes {
+    position: relative;
+    display: block;
+    flex-wrap: wrap;
+}

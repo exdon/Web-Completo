@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script> 
+        // a partir do classlist da p add, remover entre outros...
+        const classes = document.querySelector('div').classList
+        classes.add('destaque') //add o stilo "destaque" do css
+        classes.remove('destaque') // remove o stilo "destaque" do css
+        classes.toggle('destaque') //toggle= alternancia. Se não existe, ele add, se existe, ele remove
+        console.log(classes.contains('destaque')) // verifica se uma determinada classe está contida ou não na lista de classes
+        console.log(classes.length) // quantidade de classes que um determinado elemento tem. tamanho
+
+        for(let c of classes) {
+            console.log(c) // destaque
+        }
+
+        classes.forEach(c => console.log(c)) //destaque
+    </script>
+</body>
+
+</html>

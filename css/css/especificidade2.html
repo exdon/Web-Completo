@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://specificity.keegan.st/ */ /* claculadora que calcula qual elemento tem mais especificidade em relação a outro */
+        /*
+            Ordem de especificidade
+
+            1. Inline
+            2. ID
+            3. Classe, Pseudo-Classe, atributo
+            4. Elemento, Pseudo-Elementos
+        */
+        body {
+            font-size: 40px;
+        }
+        div {background-color: #00b; color: #fff;}
+        div[wm-cor] {background-color: darkorange;} /* tem mais especificidade que div e body */
+        div:hover {background-color: purple;} /* tem a mesma especificidade que div[wm-cor]. aqui vale ordem, quem executa por ultimo, ganha! */
+        div.estilo {background-color: green;} /* tem a mesma especificidade que div[wm-cor] e div:hover. aqui vale ordem, quem executa por ultimo, ganha! */
+        #unico1, #unico2 {background-color: #000;} /* id# ganha de classe. e ganha do :hover tbm. Pra ele sobrepor tem (div:hover, #unico1:hover) */
+    </style>
+</head>
+
+<body>
+    <div id="unico1" class="estilo">
+        #unico1 vs .estilo vs inline
+    </div>
+    <div id="unico2" class="estilo">#unico2 vs .estilo</div>
+    <div class="estilo" wm-cor>.estilo vs wm-cor</div>
+    <div wm-cor>wm-cor</div>
+    <div class="estilo">.estilo</div>
+    <div>elemento</div>
+</body>
+
+</html>

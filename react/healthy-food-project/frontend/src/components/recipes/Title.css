@@ -1,0 +1,30 @@
+.recipes--description {
+    text-align: center;
+}
+
+.recipes--description h1 {
+    padding-top: 50px;
+    font-size: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #1d164d;
+    font-weight: 700;
+}
+
+.recipes--description p{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #b7b7b7;
+    font-size: 18px;
+}
+
+@media(max-width: 576px) {
+    .recipes--description h1 {
+        font-size: 25px;
+    }
+
+    .recipes--description p{
+        font-size: 14px;
+    }
+}
+
+

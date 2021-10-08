@@ -1,0 +1,42 @@
+/*
+.blog--cardRow .card {
+    width: 25rem;
+}
+
+.blog--cardRow--listarea {
+    overflow-x: hidden;
+    padding-left: 30px;
+}
+
+.blog--cardRow {
+    margin-bottom: 30px;
+}
+
+.blog--cardRow--item {
+    display: inline-block;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+.blog--cardRow--item:hover {
+    transform: scale(1);
+}
+
+.card-body img {
+    border-radius: 50% ;
+}
+
+.card-body h5 {
+    margin-bottom: 22px;
+    margin-top: 10px;
+}
+
+.col-md-3 {
+    float:left;
+}
+
+.carousel--row{
+    margin-left: 300px;
+}
+*/

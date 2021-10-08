@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%; /*divide o conteúdo em duas colunas cada com 50%*/
+            grid-template-columns: repeat(4, 8.33%, 8.33%, 8.33%); /*vão ter 12 colunas(4x3) de 8.33% cada*//*serve para repetir valores em colunas, por uma quantidade de vezes passada*/
+            grid-template-columns: repeat(4, 8.33%); /*vão ter 4 colunas, cada uma com 8.33%*/
+            grid-template-columns: repeat(11, 100px) 100px; /*vão ter 11 colunas com 100pz cada. e pode se colocar o valor fora para agrupar, ou seja o 12º elemento tbm terá 100px*/
+            /*minmax(100px, 300px*//*define o tamanho minimo e máximo de uma coluna.*/
+            grid-template-columns: 200px 20% 1fr; /*1º coluna vai pegar 200px, 2º 20% da tela e 3º 1fragmento, ou seja o que sobrou ele ocupa.*/
+            grid-template-columns: 3fr 6fr 3fr; /*soma da 12. então a 1º e a 3ºpega 3fragmentos e 2º 6fragmentos, logo sendo maior*/
+            grid-template-rows: 50% 25% 12.5% 12.5%; /*aplica para linhas agora, dividindo 100% nos valores apresentados. 1º linha 50%, 2º linha 25%....*/
+            grid-template-rows: 100px 1fr; /*1º linha 100px, 2º linha 1fragmento, 3º e 4º linha se adequa ao que sobrar*/
+            grid-template-rows: 100px auto; /*1º ficará com 100px e as demais serão organizadas de forma automatica*/
+        }
+        .d8 {
+            grid-column-start: 2; /*começa na coluna 2*/
+            grid-column-end: 4; /*termina na coluna 4*/
+            grid-column-end: span 2; /*da mesmo resultado do acima. ou seja começe na casa 2(casa atual) e de um span de 2 casas (finalizando na 4)*/
+            grid-row-start: 3; /*começa na linha 3*/
+            grid-row-end: 5; /*finaliza na linha 5*/
+            grid-row-end: span 2; /*mesma lógica do acima.*/
+        }
+        .d10,
+        .d11 {
+            /*elas podem se sobrepor*/
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5; /*fazendo isso, eles se sobrepoe*/
+            grid-row-end: span 1; /*fazendo isso, eles se sobrepoe*/
+        }
+        .d10 {
+            z-index: 10; /*define quem fica na frente de quem*//*logo o d10 ficará na frente do d11*//*se colocar -1, ele volta pra trás do d11*//*quando maior o numero informado, maior é a preferência*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+    <div class="d4">4</div>
+    <div class="d5">5</div>
+    <div class="d6">6</div>
+    <div class="d7">7</div>
+    <div class="d8">8</div>
+    <div class="d9">9</div>
+    <div class="d10">10</div>
+    <div class="d11">11</div>
+    <div class="d12">12</div>
+</body>
+
+</html>

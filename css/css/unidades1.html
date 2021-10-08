@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        .unidades-absolutas { /* unidades absolutas: px(pixels), cm(centimetros), mm(milimetros)...*/
+            position: absolute; /* não tem haver com unidades absolutas e sim, para que o top e left funcionem */
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* cm pouco usado*/
+            height: 20mm; /* mm pouco usado */
+            top: 150px;
+            left: 200px;
+        }
+
+        .unidades-relativas { /* unidades relativas: em, rem, %, vw, vh ....*/
+            position: absolute;
+            font-size: 4em; /*4em: significa que ele vai gerar um tamanho de fonte 4x maior que o elemento mais próximo (pai).*/
+            padding: 5%; /* 5% do elemento pai */
+            border: solid 1vw #222; /* 1vw: significa 1/100 avos da largura (w) da viewport */
+            margin: .8%;
+            height: 15vh; /* 15vh: significa 15% da altura (h) da viewport */
+            bottom: 5%;
+            right: 5%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

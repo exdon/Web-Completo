@@ -1,0 +1,101 @@
+.about-description {
+    position: relative;
+    height: 730px;
+    left: 800px;
+    text-align: start;
+}
+
+.about-description h2 {
+    font-size: 40px;
+    padding-top: 120px;
+    padding-bottom: 25px;
+    text-align: start;
+    color: #1d164d;
+    font-weight: 700;
+}
+
+.about-description p{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #b7b7b7;
+    font-size: 18px;
+}
+
+.about--btn {
+    height: 60px;
+    width: 180px;
+    background-color: #badc58;
+    border: solid #badc58;
+}
+
+.about--btn:hover {
+    background-color: #a7c64f;
+    border: #a7c64f;
+}
+
+.about--btn--text {
+    font-size: 20px;
+}
+
+@media(max-width: 576px) {
+    .about-description {
+        left: 250px !important;
+        width: 200px !important;
+        height: 530px !important;
+    }
+
+    .about-description h2 {
+        font-size: 20px;
+        padding-top: 25px;
+        padding-bottom: 10px;
+    }
+
+    .about-description p{
+        font-family: Comic Sans MS, Comic Sans, cursive;
+        color: #b7b7b7;
+        font-size: 14px;
+        height: 320px;
+    }
+
+    .about--btn {
+        height: 40px;
+        width: 100px;
+        background-color: #badc58;
+        border: solid #badc58;
+    }
+
+    .about--btn--text {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 992px) {
+    .about-description {
+        left: 300px;
+        width: 300px;
+        height: 530px;
+    }
+
+    .about-description h2 {
+        font-size: 20px !important;
+        padding-top: 25px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .about-description p{
+        font-family: Comic Sans MS, Comic Sans, cursive;
+        color: #b7b7b7;
+        font-size: 14px  !important;
+        height: 320px;
+    }
+
+    .about--btn {
+        height: 40px;
+        width: 100px;
+        background-color: #badc58;
+        border: solid #badc58;
+    }
+
+    .about--btn--text {
+        font-size: 14px;
+    }
+}

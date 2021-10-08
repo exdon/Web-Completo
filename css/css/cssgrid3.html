@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       header {
+           grid-area: cabecalho; /*label*/
+       }
+       nav {
+           grid-area: navegacao; /*label*/
+       }
+       main {
+           grid-area: conteudo; /*label*/
+       }
+       footer {
+           grid-area: rodape; /*label*/
+       }
+       body {
+           display: grid;
+           min-height: 100vh;
+           grid-template-columns: 300px 1fr; /*2 colunas*/
+           grid-template-rows: 100px 1fr 100px; /* 3 linhas */ /*total de 6 espaços*/
+           grid-template-areas: /*por ter 2 colunas, precisa de 2 valores*/
+            'cabecalho cabecalho'
+            'navegacao conteudo'
+            'rodape rodape'
+           ; /*a partir dessa propriedade eu defino como organizar os grid-area, pelos labels definidos*/
+       }
+       @media(max-width: 700px) { /*para dispositivos com no máximo 700px*/
+           body {
+               grid-template-columns: 1fr; /*terá apenas uma coluna*/
+               grid-template-rows: 80px 80px 1fr 100px; /*4 linhas*/
+               grid-template-areas: /*por ter 1 coluna, precisa apenas de 1 valor*/
+                    'cabecalho'
+                    'navegacao'
+                    'conteudo'
+                    'rodape';
+           }
+       }
+    </style>
+</head>
+
+<body>
+    <main class="tag">CONTEÚDO</main>
+    <header class="tag">CABEÇALHO</header>
+    <footer class="tag">RODAPÉ</footer>
+    <nav class="tag">NAVEGAÇÃO</nav>
+
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

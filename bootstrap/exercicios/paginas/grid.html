@@ -1,0 +1,139 @@
+<!-- Título (jumbotron) -->
+<!-- Breadcrumb -->
+<div class="jumbotron p-4 m-1"> <!-- olhar na documentação bootstrap o que é o jumbotron -->
+    <h1 class="display-4">Sistema de Grid</h1>
+    <p class="lead m-1">Revolução da Responsividade: Containers, Linhas e 12 Colunas.</p>
+</div>
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Grid</li> <!-- active serve para dizer em qual página estou -->
+    </ol>
+</nav>
+
+<p class="lead">
+    <a href="https://getbootstrap.com/docs/4.0/layout/grid/"
+        target="_black">Documentação Oficial</a>
+</p>
+
+<div class="exercicio">
+    <h1>1. Grid Básica</h1>
+    <hr>
+
+    <!-- Grid Básica -->
+    <!-- sistema grid é dividido em 12 colunas -->
+    <div class="container-fluid"> <!-- container-fluid = significa que ele vai ocupar a tela inteira de um modo fluido, ou seja se a tela crescer, ele cresce junto. Sem fluid, ele ocupa um tamanho fixo da tela -->
+        <div class="row"> <!-- row = linha -->
+            <div class="col bg-primary">1</div> <!-- .col = pra dispositivos extra small *ver especificações na documentação -->
+            <div class="col bg-danger">2</div> 
+            <div class="col bg-warning">3</div>
+            <div class="col bg-info">4</div>
+            <div class="col bg-secondary">5</div>
+            <!-- como não especifiquei qts coluna ele ira ocupar, ele divide as divs de forma igualitaria entre as 12 -->
+        </div>
+        <div class="row mt-3">
+            <div class="col bg-danger">1</div> <!-- ocupa 1.5 das 12, pois foi o que sobrou -->
+            <div class="col-4 bg-warning">2</div> <!-- col-4 = ele irá ocupar 4 colunas das 12. -->
+            <div class="col-5 bg-info">3</div> <!-- col-5 = ele irá ocupar 5 colunas das 12. -->
+            <div class="col bg-primary">4</div> <!-- ocupa 1.5 das 12, pois foi o que sobrou -->
+        </div>
+
+    </div> 
+
+
+
+    <h1 class="mt-5">2. Grid Responsiva</h1>
+    <hr>
+
+    <!-- Grid Responsiva -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- isso depende do tamanho da tela que será exibido o conteúdo -->
+            <!-- não é um padrão, apenas sugestão -->
+            <!-- col = extra small, ocupa as 12 columns -->
+            <!-- col-sm = small, ocupa 6 -->
+            <!-- col-md = middle, ocupa 4 -->
+            <!-- col-lg = large, ocupa 2 -->
+            <!-- col-xl = extra large, ocupa 1 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">1</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">2</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">3</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">4</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-sucess">5</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">6</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">7</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">8</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-sucess">9</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">10</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">11</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">12</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">3. Quebra de Linha</h1>
+    <hr>
+
+    <!-- Quebra de Linha -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 bg-primary">1</div>
+            <div class="col-3 bg-danger">2</div>
+            <div class="w-100">3</div> <!-- isso ocupa a largura inteira da tela, ou seja obriga que a div pule uma linha. Isso serve para não ocorrer quebra de linhas não planejadas na applicação, vc define uma quebra  -->
+            <div class="col-3 bg-warning">3</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">4. Ordem</h1>
+    <hr>
+
+    <!-- Ordem -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- order vai de 1 a 12 , sendo 1 o 1º item e 12 o 12º item.-->
+            <div class="col-4 order-5 bg-primary">1</div>
+            <div class="col-4 order-12 bg-danger">2</div>
+            <div class="col-4 order-1 bg-warning">3</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">5. Offset</h1>
+    <hr>
+
+    <!-- Offset -->
+    <!-- offset é usada para definir quantas colunas vc quer ocupar, mas em que posição exata -->
+    <!-- por exemplo, quero ocupar 2 colunas das 12, só q eu não quero ocupar as 2 primeiras, quero dar um deslocamento de 3. -->
+    <!-- Para isso usa-se o offset -->
+    <!-- pode ser associado a um disposito, ou seja lg, xl, md. Se for um desse, ele aplica o offset -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 offset-7 bg-primary">1</div> <!-- ocupará 3 colunas com um offset de 7, ou seja deslocando 7 colunas -->
+            <div class="col-4 offset-3 bg-danger">2</div>
+            <div class="col-6 offset-1 bg-warning">3</div>
+            <div class="col-sm-4 offset-sm-3 bg-danger">4</div> <!-- ocupará 4 colunas com offset de 3, porém só se o disposito for sm(small) ou maior -->
+        </div>
+    </div>
+
+    <h1 class="mt-5">6. Alinhamento</h1>
+    <hr>
+
+    <!-- Alinhamento -->
+    <div class="container-fluid">
+        <div class="row h-300"> <!-- h-300 não é do bootstrap, foi definido no style dessa pág -->
+            <div class="col-4 align-self-end bg-primary">1</div>
+            <div class="col-4 align-self-center bg-danger">2</div>
+            <div class="col-4 align-self-start bg-warning">3</div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .exercicio div {
+        font-size: 1.5em;
+    }
+
+    .h-300 {
+        height: 300px;
+    }
+</style>

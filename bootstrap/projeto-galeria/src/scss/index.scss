@@ -1,0 +1,8 @@
+    //~ quer dizer que ele vai procurar dentro de nodemodules a pasta boostrap/scss/bootstrap
+@import "~bootstrap/scss/bootstrap"; 
+
+$fa-font-path: "~font-awesome/fonts"; //dizer onde ele vai encontrar o diretorio das fontes
+
+@import "~font-awesome/scss/font-awesome";
+
+@import "custom"; // importando o custom.scss

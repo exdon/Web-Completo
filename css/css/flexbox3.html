@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+        .flex-container div {
+            box-sizing: border-box;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row; /*padrão*/
+        }
+        .flex-container div {
+            flex-basis: 100px; /*qual a dimensão de um elemento dentro do flex container*//*ele é tem prioridade em relação ao width*/
+            width: 200px; /*não será valido. A não ser que o flex-direction seja column*/
+        }
+        .flex-container div:nth-child(4) {
+            /*1º grow 2º shrink 3º basis*/
+            flex: 3 6 100px;
+        }
+        .flex-container {
+            width: 300px;
+            width: 600px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

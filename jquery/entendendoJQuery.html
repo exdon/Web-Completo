@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        $('div').hide(5000) //irá esconder as div levando 5 segundos para isso acontecer.
+                .show(5000) // depois mostra os elementos, levando tbm 5 segundos.
+                .fadeOut(5000) // os elementos vão sumindo aos poucos, levando 5 segundos.
+        console.log($('div').get(0))
+        console.log($.isEmptyObject({})) //true
+        console.log(jQuery.inArray(3, [1,2,3])) // retorna a posição que o 3 está, no caso 2
+
+        $.fn.fundoVerde = function () {
+            this.css('background-color', 'green')
+            return this   //precisa retornar o obj(this) para que consiga encadear as funções (fadeout, hide...)
+        }
+
+        $('body').fundoVerde().fadeOut(5000)
+    </script>
+</body>

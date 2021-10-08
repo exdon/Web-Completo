@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+
+        .c1 {
+            background-color: red;
+            float: right; /* somente o elemento c1 irá flutuar alinhado a esquerda */
+        }
+
+        .c2 {
+            background-color: green;
+            clear: right; /* isso faz com que o elemento float: right do c1 seja considerado, deixando o espaço dele do lado esquerdo(left) vazio.*/
+        }
+        
+        .c3 {
+            background-color: blue;
+        }
+
+        .c4 {
+            background-color: orange;
+        }
+
+        div {
+            height: 150px;
+            width: 150px;
+            float: right; /* alinha os elementos todos na mesma linha a direira. O primeiro elemento fica mais a direita e o ultimo mais a esquerda */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        const body = document.querySelector('body')
+
+        const div1 = document.createElement('div') //cria um elemento do tipo div
+        div1.classList.add('destaque') // add o stilo css "destaque" na div1 criada
+        div1.innerHTML = 'Primeiro' // add conteudo "Primeiro" dentro dessa div1
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor')
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro'
+        const div3 = document.createElement('div')
+        div3.appendChild(p) //p será add como ultimo elemento dentro do pai(div3)
+
+        body.appendChild(div1) // add o elemento div1 no body (aqui ele aparece de fato na página)
+        body.appendChild(div2)
+        body.appendChild(div3) // add o elemento div3 no body junto com seus filhos (no caso o elemento p)
+
+        const texto = document.createTextNode('Antes...')
+        div3.insertBefore(texto, div3.childNodes[0]) //serve para add um elemento(texto) dentro de um elemento pai(div3), antes do elemento na posição descrida(div3.childNodes[0]).
+
+        const div4 = div3.cloneNode(true) // cria um clone de um elemento. true = clonagem profunda(deep), ou seja ele clona o elemento e seus filhos. false = somente o elemento
+        body.appendChild(div4) // add o elemento (div4) ao pai(body)
+        body.removeChild(div3) //remove o elemento div3. Isso faz com que o elemento div4, tome seu lugar.
+    </script>
+</body>
+
+</html>

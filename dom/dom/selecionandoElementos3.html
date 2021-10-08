@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo..."> <!--q não é um nome aleatorio, ele é reconhecido pelo browser para definir a pesquisa(query)-->
+        <select name="hl"> <!--hl não é um nome aleatorio, ele é reconhecido pelo browser para definir a language-->
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        console.log(document.forms) //para selecionar os forms. traz um array do tipo htmlcollection
+        console.log(document.forms[0]) //form de indice 0
+        console.log(document.getElementsByName('pesquisa')) //traz o form e os inputs dele do tipo nodeList
+        console.log(document.getElementsByTagName('form')) //traz o form do tipo htmlcollection
+        console.lo(document.pesquisa) // retorna o elemento que tem o name pesquisa
+        console.log(document.pesquisa.q) // retorna o elemento que tem o name pesquisa e q
+        document.pesquisa.q.value = 'Linux' // isso altera o valor contido em pesquisa.q
+        document.pesquisa.hl.value = 'en-us' // isso altera o valor contido em pesquisa.hl
+        console.lo(document.pesquisa.hl.selectedIndex) //retorna o index que esta selecionado (pt-br [0] en-us [1])
+
+    </script>
+</body>
+
+</html>

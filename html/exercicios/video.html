@@ -1,0 +1,90 @@
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload"> <!--controls faz o play/pause, volume do video aparecer. os controles. Se colocar  controls autoplay, assim que entrar na página ele executará automaticamente. controlsList="nondowload", tira a opção de baixar o vídeo-->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu vídeo não suporta nesse browser. <!--Caso o arquivo não possa ser executado no browser, ele mostra essa msg-->
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid #444;
+        margin: 20px;
+    }
+    .progresso > div { /* div que tem dentro > da classe progresso*/
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+    // Implementação de botões de play e pause e ativação da barra de progresso
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false // faz com que o menu dentro do video não apareça. Basicamente para proibir baixar o video.
+
+        document.querySelector(`[wm-play=${id}]`).onclick = evento => video.play() // ao clicar, ele vai dar play
+        document.querySelector(`[wm-pause=${id}]`).onclick = evento => video.pause() // ao clicar, ele vai dar pause
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100 
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%` // pega a div e aplica o style de progresso na largura(width)
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%` // mostra quantos % está sendo carregado
+        }, 500);
+    }
+
+    configurarVideo('meuVideo')
+</script>
+
+<!--outra opção-->
+<!--
+   1.   <script>
+
+2.       const video = document.getElementById('meuVideo')
+
+3.       const pauseButton = document.querySelector('[wm-pause]')
+
+4.       const playButton = document.querySelector('[wm-play]')
+
+5.       const divProgresso = document.querySelector('[wm-progresso] > div')
+
+6.    
+
+7.       pauseButton.addEventListener('click', video.pause)
+
+8.       playButton.addEventListener('click', () => { 
+
+9.           video.play()
+
+10.         video.addEventListener('timeupdate', videoPercent)
+
+11.     })
+
+12.  
+
+13.     function videoPercent() {
+
+14.         const percentual = Math.floor((video.currentTime / video.duration) * 100)
+
+15.  
+
+16.         divProgresso.style.width = `${percentual}%` 
+
+17.         divProgresso.innerHTML = `${percentual}%`
+
+18.     }
+
+19. </script>
+-->

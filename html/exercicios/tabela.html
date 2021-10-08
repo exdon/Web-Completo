@@ -1,0 +1,53 @@
+<table>
+    <caption>Produtos</caption> <!-- caption: O que representa essa tabela-->
+    <thead> <!--define a area que vc ira colocar o cabeçalho da tabela-->  <!--Não INterfere no funcionamento. É apenas por questão de semantica-->
+        <tr> <!--Linha : table row-->
+            <th>Produto</th> <!--table head-->
+            <th>Preço</th>
+            <th>Quantidade Total</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody> <!--define o corpo da tabela--> <!--Não INterfere no funcionamento. É apenas por questão de semantica-->
+        <tr>
+            <td>IPad</td> <!--Table data-->
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot> <!--Table foot   define rodapé--><!--Não INterfere no funcionamento. É apenas por questão de semantica-->
+        <tr>
+            <td colspan="3" rowspan="2">Total</td> <!--colspan: ocupa um espaço maior que as demais colunas. 3 ocupará 3 espaço de colunas-- rowspan: faz a mesma coisa, porém em vez de colunas, ocupa 2 linhas-->
+            <td>37637,00</td>
+        </tr>
+        <tr>
+            <td>Teste</td>
+        </tr>
+    </tfoot>
+</table>
+<style>
+    table {
+        border-collapse: collapse; /* tira a borda da tabela*/
+    }
+    th, td {
+        padding: 10px;
+    }
+    thead tr {
+        border-bottom: solid 3px #444;
+    }
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>

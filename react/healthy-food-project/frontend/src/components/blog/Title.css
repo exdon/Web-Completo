@@ -1,0 +1,18 @@
+.blog--description {
+    text-align: center;
+}
+
+.blog--description h1 {
+    padding-top: 50px;
+    font-size: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #1d164d;
+    font-weight: 700;
+}
+
+.blog--description p{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #b7b7b7;
+    font-size: 18px;
+}

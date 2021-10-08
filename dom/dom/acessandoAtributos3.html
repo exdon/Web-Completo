@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('#compras')
+
+        // forma somente leitura
+        console.log(lista.attributes) //NamedNodeMap{0: id, 1: destino, 2: data-urgencia...}
+        console.log(lista.attributes[0]) //id:"compras"
+        console.log(lista.attributes.id) // id="compras"
+        console.log(lista.attributes[1]) // destino:"escritório"
+        console.log(lista.attributes.destino) // destino:"escritório"
+        console.log(lista.attributes[2]) // data-urgencia="5"
+        console.log(lista.attributes.data-urgencia) //ERRO: - é reconhecido como sinal de menos, logo não pode fazer dessa forma
+        console.log(lista.attributes['data-urgencia']) // data-urgencia="5"
+        lista.attributes.destino = 'casa' // não altera, pois é somente leitura a notação . (ponto)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #01</h1>
+    <div id='conteudo1'></div>
+    <div id='conteudo2'></div>
+    <div id='conteudo3'></div>
+    <div>Sem ID!</div>
+
+    <script>
+        // Conteúdo 1
+        $('#conteudo1').append('<p>1</p>') // add um paragrafo na div com id elemento1
+        
+        //Conteúdo 2
+        const elementos = [
+            $('<li></li>').append('Arroz'), // Criando um elemento li
+            $('<li>').append('Feijão'), //outra forma mais usada de criar um elemento li
+            $('<li>').append('Carne')
+        ]
+
+        const lista = $('<ul><li>Sorvete</li></ul>').prepend(elementos) //crio uma lista ja com o elemento Sorvete e add os elementos definidos na variavel elementos. prepend adiciona os elementos definidos na var elementos, antes do elemento já definido na lista(no caso sorvete), ou seja, ele será o ultimo da lista.
+        $('#conteudo2').append(lista) // add os elementos definidos na lista na div com id conteudo 2
+
+        // Conteúdo 3 
+        $('#conteudo3').append('<h1>1</h1>', '<h1>2</h1>') // ou tbm pode ser .append(['<h1>1</h1>', '<h1>2</h1>'])
+            .prepend('<h1>0</h1>')
+        $('#conteudo3').html('<h1>123</h1>') // o .html substituí os elementos do .append para o que está dentro da função ().
+        $('#conteudo3').text('<h1>123</h1>') // .text coloca o texto definido() na div (no caso iria aparecer <h1>123</h1>).
+
+        // Alterando todos
+        $('div[id]').html('<strong>Todos!</strong>') // altera todas os elementos div que tem o atributo id, adicionando o conteudo definido no .html
+    </script>
+</body>

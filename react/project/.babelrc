@@ -1,0 +1,5 @@
+{
+    "presets": ["@babel/preset-react"]
+}
+
+// informa que irá utilizar o preset do react... utilizará uma versão anterior do react/javascript, caso a versão utilizada não seja suportada pelo navegador.

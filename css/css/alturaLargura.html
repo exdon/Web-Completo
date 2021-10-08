@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        /*html {
+            height: 100%; 
+        }Fazendo isso, agora as alturas (height) definidas nos elementos filhos abaixo(body, span,div) irão funcionar, pois o pai maior(html) ocupa 100% do viewport*/
+        body { /* por padrão o body já ocupa a largura(width) toda do viewport, mas não ocupa toda a altura(height). */
+            font-size: 40px;
+            background-color: coral;
+            height: 100%; /* isso não funciona, pois o elemento pai(html), não ocupa toda a altura(height) do viewport */
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        span, div {
+            width: 50px;
+            height: 250px; /* isso funciona */
+            height: 50%; /* isso não funciona, pois ambos pedem pra ocupar 50% da altura do elemento pai(body). Mas o body não ocupa todo a altura(height) do viewport */
+        }
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>

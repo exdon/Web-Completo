@@ -1,0 +1,60 @@
+.container--fluid {
+    left: 0;
+    right: 0;
+}
+
+main.content {
+    right: 0;
+    overflow: hidden;
+}
+
+.container--home {
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    left: 0;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--recipe {
+    left: 0;
+    right: 0;
+    background-color: #fafafc;
+    display: block;
+    box-sizing: border-box;
+}
+
+.container--about {
+    left: 0;
+    right: 0;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--blog {
+    left: 0;
+    right: 0;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--join {
+    height: 680px;
+    left: 0;
+    right: 0;
+}
+
+@media(max-width: 768px) {
+    .container--about {
+        height: 550px;
+    }
+}
+

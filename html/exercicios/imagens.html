@@ -1,0 +1,131 @@
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342" title="Muro da cidade por Tarso Bessa">
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" height="342">
+    </p>
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342">
+    </p>
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left"> <!--align: alinhamento da imagem-->
+        Esse texto ficará junto ao avatar img. Estou usando apenas para mostrar o que pode ser feito com imagens e textos juntos.
+        Lembrando que é necessário usar o align.
+    
+    </p>
+    <p class="cidade"></p> <!--imagem será colocada aqui por meio do css-->
+    
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)"> <!--srcset + media: diz que a imagem só sera exibida se for a largura for no minimo 600px-->
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo"> <!--caso seja menor, ele exibira essa imagem-->
+        </picture>
+    </p>
+</div>
+
+<style>
+    * { margin: 0; padding: 0; }
+
+    p {
+        position: absolute; /* faz com que as imagens fique uma em cima da outra */
+        display: none; /* faz com que as imagens sumam do display */
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto{
+        width: 450px;
+    }
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat; /* Faz com a imagem não repita */
+        background-size: 200%; /* zoom na imagem */
+    }
+</style>
+
+<script>
+    /*
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo //ex. se a img começa com 100px e o passo é 5, ele sai de 100px para 95px, depois 90px ...
+        if(novoInicio >= fim) { 
+            elem.style.left = novoInicio + 'px' // ele aplica a propriedade left na imagem.
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7) // a cada 7 milisegundos, a função mover será chamada.. isso faz com que a cada 7 ms ele vai indo de 5 em 5 px, conforme ex do novo inicio.
+        } else {
+            callback()
+        }
+    }
+
+    /*const p = document.querySelector('[wm-slider] > p') // ele pega a primeira imagem da tag p
+    p.style.display = 'block' // faz com essa img que fique visivel.
+    mover(p, 1500, -520, 5, () => {
+        console.log('Terminou!!!')
+    })*//*
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos) // cria um array(matriz) a partir de algo passado(). Tranforma elementos em um array de slides.
+        exibirSlide (slides, slides[0])
+    }
+
+    function exibirSlide (slides, slide) {
+        slide.style.display = 'block' //faz com que fique visivel.
+
+        const inicio = innerWidth // obtem a largura da pagina
+        const fim = -slide.clientWidth //largura da tag p
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 5, () => {
+            slide.style.display = 'none' // faz com que fique invisivel
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1 //retorna o indice atual mais 1 ele da o proximo
+        return i < lista.length ? lista[i] : lista[0] // se o i(indice) for menor do que o tamanho da lista, retorne lista[i], caso ele seja >= lista.lenght, retorne lista[0]
+    }
+
+    slider()*/
+</script>
+<script>
+    // mostrando imagem inicial
+    let imagens = document.getElementsByTagName('p')
+    let indice = 0
+    imagens[indice].style.display = 'block'
+    let posicao = -500
+ 
+    //  mudando imagem
+    function mudandoImagem () {
+        indice++
+        if (indice > imagens.length - 1 ) { 
+            indice = 0 
+            imagens[imagens.length - 1].style.display = 'none'
+            }
+        imagens[indice].style.display = 'block'
+        imagens[indice - 1].style.display = 'none'            
+    }
+ 
+    //deslizando imagem
+    function deslizarImagem() {
+        posicao += 2
+        imagens[indice].style.right = posicao + "px"
+        if (posicao == 1400) { 
+            posicao = -500
+            mudandoImagem()}
+    }
+ 
+    setInterval(deslizarImagem, 5)
+    
+</script>

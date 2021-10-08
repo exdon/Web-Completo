@@ -1,0 +1,40 @@
+<h1>Tags Não Visuais</h1> 
+
+<!--
+    Tags Semânticas...
+
+    section - para colocar o conteúdo da página. agrupamento temático de conteúdo
+    article - conteúdo auto-contido. serve para um artigo independente. ex.post de um forum, revista, post de blog.
+    header - cabeçalho do documento
+    footer - rodapé do documento
+    nav - a parte de navegação, menu, links.
+    aside  - de lado (ex.sidebar). Serve como adendo, um observação.
+    details - exibe detalhes que pode ser exibidos ou escondidos.
+
+    As famosas
+
+    div - divisão ou seção 
+    span - usado para agrupar elementos inline
+-->
+<div>Área 1</div>
+<div>Área 2</div>
+
+<p>
+    Esse é um texto com <span class="diferente">muitas palavras</span> e ponto. <!--pode se usar para estilizar com css-->
+</p>
+
+<style>
+    div {
+        display: inline; /* Muda o padrão da div de ser em blocos para inline */
+    }
+
+    span {
+        display: block; /* Muda o padrão do span de ser em inline para blocos */
+    }
+
+    .diferente { /* estilizando o elemento span com classe diferente */
+        font-weight: bold;
+        font-size: 30px;
+        color: chocolate;
+    }
+</style>

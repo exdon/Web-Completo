@@ -1,0 +1,58 @@
+.card--container {
+    display: block;
+}
+
+.card--row {
+    justify-content: center;
+    padding-bottom: 100px;
+    padding-top: 20px;
+ }
+
+.broccoli--card {
+    margin-right: 15px;
+    max-width: 560px;
+}
+
+.burguer--card {
+    max-width: 560px;
+    margin-right: 15px;
+}
+
+.cobbler--card {
+    max-width: 560px;
+    margin-right: 15px;
+}
+
+.salad--card {
+    margin-right: 15px;
+    max-width: 560px;
+}
+
+.card-title {
+    color: #1d164d;
+    font-size: 30px;
+}
+
+.card--btn {
+    height: 50px;
+    width: 150px;
+    background-color: #badc58;
+    border: solid #badc58;
+}
+
+.card--btn:hover {
+    background-color: #a7c64f;
+    border: #a7c64f;
+}
+
+.card--div--img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media(max-width: 768px) {
+    .broccoli--card, .burguer--card, .cobbler--card, .salad--card {
+        max-width: 350px;
+    }
+}

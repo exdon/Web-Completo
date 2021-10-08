@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #02</title>
+    <style>
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+        body {
+            display: grid;
+            grid-template-columns: 
+            [inicio]1fr 
+            [metade-1 meio-1]1fr 
+            [metade-2 meio-2]1fr [fim]; /*[...]serve para nomear as linhas de uma coluna e vice e versa*/
+            grid-template-rows: repeat(3, 1fr);
+            column-gap: 20px; /*da um espaço entre as colunas */
+            row-gap: 20px; /*espaço entre as linhas*/
+            grid-gap: 10px; /*espaço nas linhas e nas colunas de 10px*/
+        }
+        .d1 {
+            grid-column-start: metade-2; /*começa a partir da linha da coluna nomeada como metade-2*/
+            grid-column-end: fim; /*finaliza na linha da coluna nomeada como fim*/
+            grid-column: meio-1 / fim; /*isso indica que ele vai começar na linha nomeada como meio-1 e finaliza na linha nomeada como fim*/
+            grid-row: 1 / span 2; /*começa na linha 1 e da um span para ocupar duas casas*/
+            /* grid-area: row-start / column-start / row-end / column-end */
+            grid-area: 1 / meio-1 / span 3  / fim;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+</body>
+
+</html>

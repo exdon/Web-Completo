@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #02</h1>
+    <div id='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='div3'>3</div>
+    <p class='numero'>4</p>
+    <p class='numero'>5</p>
+
+    <script>
+        $('#div1').append(',2') //adiciona um elemento, sem substituir o que está
+        $('#div1').prepend('0,') // add o 0 antes dos elementos que estão lá (incluindo o 2 add acima)
+
+        $('<span>, 3</span>').appendTo('#div1') // add o 3 e coloca todos os elementos da div1 em um span
+        $('<span>-1, </span>').prependTo('#div1') //o mesmo que o de cima, porém com -1 no início.
+
+        $('#div2').before('<p>Antes 2</p>') // antes do elemento div, add o paragrafo (Antes 2)
+        $('#div2').after('<p>Depois 2</p>') // coloca depois do elemento div
+
+        $('<p>Antes 3</p>').insertBefore('#div3') //cria o elemento p com o texto(Antes 3) e insere antes da div com id div3
+        $('<p>Depois 3</p>').insertAfter('#div3') // mesma coisa, porém insere depois da div com id div3
+
+        //$('p.numero').wrap('<div>') //irá colocar(envolver) os elementos p com class numero dentro de uma div cada um
+        $('p.numero').wrapAll('<div id="div4">') // irá colocar(envolver) os elementos p com class numero dentro de uma unica div com id div4
+        $("#div4").empty() // remove o conteúdo da div4 deixando ela vazia
+        $('#div3, #div4').prev().remove() // pega os elementos anteriores (.prev()) as div3 e div4 e remova-os(remove()).
+
+        //$('<div>Substituto</div>').replaceAll('body > p') // substitua todos os p que estão diretamente dentro do body(body > p) por um div com contepudo Substituto
+        $('body > p').replaceWith('<div>Substitudo</div>') // tem o mesmo resultado do replaceAll
+        $('body > p').replaceWith(function() {
+            return $('<div>').html($(this).html()).append('!!!') // colocará o conteúdo p que estão diretamente dentro de body dentro de uma div e add interrogações no final
+        })
+    </script>
+</body>

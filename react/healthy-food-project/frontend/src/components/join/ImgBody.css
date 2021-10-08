@@ -1,0 +1,16 @@
+.join--img--area {
+    position: absolute;
+    justify-content: right;
+    align-items: right;
+    right: 0;
+    overflow: hidden;
+}
+
+.join--img--area img {
+    justify-content: right;
+    align-items: right;
+    height: 100%;
+    right: 0;
+    left: 100px;
+    object-fit: cover;
+}

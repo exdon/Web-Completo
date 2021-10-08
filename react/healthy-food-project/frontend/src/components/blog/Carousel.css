@@ -1,0 +1,31 @@
+.carousel--row {
+    margin-bottom: 30px;
+    margin-left: 200px;
+}
+
+.carousel--row .card{
+    width: 22rem;
+}
+
+.blog--cardRow--item {
+    display: inline-block;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+    padding-right: 150px;
+}
+
+.blog--cardRow--item:hover {
+    transform: scale(1);
+}
+
+.card-body img {
+    border-radius: 50% ;
+}
+
+.card-body h5 {
+    margin-bottom: 22px;
+    margin-top: 10px;
+}
+
+

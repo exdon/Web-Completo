@@ -1,0 +1,52 @@
+.register--background {
+    background-image: url('../../../assets/imgs/pexels-lukas-349609.jpg');
+    background-size: cover;
+    height: inherit;
+}
+
+.register {
+    max-width: 700px;
+    margin: auto;
+    width: 80%;
+    padding-bottom: 50px;
+}
+
+
+.register--title h3 {
+    font-size: 2.5rem;
+    color: #424140;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    font-weight: bold;
+
+}
+
+.form--register {
+    background-color: #badc58;
+    padding: 30px;
+    border-radius: 0px 80px;
+}
+
+.form--user {
+    position: relative;
+}
+
+.form--user i {
+    position: absolute;
+    padding: 20px 12px 250px;
+    pointer-events: none;
+    color: #666;
+}
+
+.form--user input.form-control {
+    padding-left: 30px;
+}
+
+.form-inline button {
+    margin-left: 15px;
+}
+
+.register--background button {
+    width: 150px;
+}

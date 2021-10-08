@@ -1,0 +1,105 @@
+<!-- Título (jumbotron) -->
+<!-- Breadcrumb -->
+<div class="jumbotron p-4 m-1"> <!-- olhar na documentação bootstrap o que é o jumbotron -->
+    <h1 class="display-4">Fundamentos</h1>
+    <p class="lead m-1">Alguns recursos importantes do bootstrap</p>
+</div>
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Fundamentos</li> <!-- active serve para dizer em qual página estou -->
+    </ol>
+</nav>
+
+
+<div class="exercicio">
+    <h1>1. Tipografia -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/content/typography/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <ul>
+        <li><strong>Reboot</strong> - Torna consistente o estilo entre diferentes browser!</li>
+        <li><strong>Rems</strong> - Baseado no raiz</li>
+        <li>Evita <strong>margin-top</strong> - Provavelmente será necessário adicionar algum espaço</li>
+        <li><strong>box-sizing</strong> border-box</li>
+        <li>Fontes nativas</li>
+    </ul>
+
+    <h1 class="mt-5">2. Espaços -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/spacing/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Espaços -->
+    <!-- os valores vão de 0 a 5, sendo 0 menor e 5 maior -->
+    <div class="mb-5">1</div> <!-- mb = margin bottom --> <!-- l= left  r= right  t= top -->
+    <div class="m-4 py-4">2</div> <!-- m = margin em toda a div / py= padding eixo y(vertical) x(horizontal) -->
+    <div class="pt-5">3</div> <!-- pt = padding top -->
+
+    <h1 class="mt-5">3. Cores -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/colors/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Cores -->
+    <div class="my-1 p-3 bg-primary text-light">1</div>
+    <div class="my-1 p-3 bg-danger text-white">2</div>
+    <div class="my-1 p-3 bg-warning text-sucess">3</div>
+
+    <h1 class="mt-5">4. Flex -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/flex/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Flex -->
+    <div class="d-flex flex-column-reverse p-2"> <!-- d.flex habilita o flex box dentro da div; flex-column-reverse  tudo estará organizado na forma de coluna, com conteúdo revertido(1º sendo o ultimo e o ultimo 1º)  -->
+        <div class="align-self-end">1</div> <!-- align-self-end  alinha os itens a direita da página -->
+        <div class="align-self-center">2</div> <!-- align-self-center  alinha os itens ao centro da página -->
+        <div class="align-self-start">3</div> <!-- align-self-start  alinha os itens a esquerda da página -->
+    </div> 
+
+    <h1 class="mt-5">5. Imagens -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/content/images/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Imagens -->
+    <div class="p-2">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="mx-auto d-block" width="400"> <!-- mx-auto= margin no eixo x como automática; d-block= em blocos obs: a img não fica tão responsiva e pode ultrapassar a div, dependendo do tamanho da tela -->
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-thumbnail" width="400"> <!-- img-thumbnail = cria uma espécie de borda em volta da imagem -->
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-fluid" width="400"> <!-- img-fluid = deixa a imagem mais responsiva -->
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-fluid rounded-circle" width="400"> <!-- rounded-circle = deixa a imagem circular -->
+    </div>
+
+    <h1 class="mt-5">6. Float -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/float/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Float -->
+    <div class="my-1 p-3 float-left">1</div> <!-- alinha a esquerda -->
+    <div class="my-1 p-3 float-right">2</div> <!-- alinha a direita -->
+    <div class="my-1 p-3 float-lg-right">3</div> <!-- alinha a direita; lg = largo, ou seja ele só vai aplicar esse float right caso o tamanho da tela seja largo ou extra-largo xl -->
+</div>
+
+<style>
+    .exercicio div {
+        border: solid 8px #000;
+        font-size: 2rem;
+    }
+</style>

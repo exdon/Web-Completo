@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista =  document.querySelector('div ul [destino="escritório"]')
+        console.log('elemento "ul".......')
+        console.log('childNodes', lista.childNodes) //NodeList(7) [text, li, text, li, text, li, text]
+        console.log('destino', lista.destino) //undefined
+        console.log('getAttribute', lista.getAttribute('destino')) // getAttribute escritório
+        console.log('hasAttribute', lista.hasAttribute('destino')) //hasAttribute true
+        lista.setAttribute('destino','empresa') //muda para o atributo de destino(escritório) para empresa
+        lista.setAttribute('status', 'aberto') //aqui ele adiciona o atributo status, que não existia antes e coloca o valor aberto
+        lista.removeAttribute('destino') //excluí o atributo destino
+        console.log(lista.dataset) // DOMStringMap {urgencia: "5"}
+        lista.dataset.urgencia = 4 //altera o valor de 5 para 4
+        console.log(lista.getAttribute('data-urgencia')) // 5
+
+        //alguns cuidados
+        const label = document.querySelector('label')
+        console.log(label.for) //undefined
+        console.log(label.htmlFor) // compras
+        console.log(label.getAttribute('for')) // compras
+    </script>
+</body>
+
+</html>

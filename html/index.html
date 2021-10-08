@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px; /* espaçamento = 30 em cima e em baixo, laterais 0*/
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a> |
+        <a href="exercicios/texto1.html">01 - Texto 1</a> |
+        <a href="exercicios/texto2.html">02 - Texto 2</a> |
+        <a href="exercicios/listas.html">03 - Listas</a>|
+        <a href="exercicios/listaAninhada.html">04 - Lista Aninhada</a>|
+        <a href="exercicios/links.html">05 - Links</a>|
+        <a href="exercicios/tabela.html">06 - Tabela</a>|
+        <a href="exercicios/form/form.html">07 - Formulário</a>|
+        <a href="exercicios/imagens.html">08 - Imagens</a>|
+        <a href="exercicios/video.html">09 - Video</a>|
+        <a href="exercicios/tagsNaoVisuais.html">10 - Tags Não Visuais</a>|
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            link.onclick = function(evento) {
+                evento.preventDefault() // ele vai previnir que o evento padrão (a navegação do link pra outra pag) ocorra, obrigando a fazer o que função pede.
+                
+                const conteudo = document.getElementById('conteudo') // onde será colocar o conteudo.
+                fetch(link.href) // usado para lidar com requisições HTTP, retorna um response.
+                    .then(resp => resp.text()) //retorna a informação requisitada em formato de texto.
+                    .then(html => conteudo.innerHTML = html) // joga o conteudo obtido no campo com o id conteudo.(section)
+            }
+        }) // faz com que ao clicar no link (a), ele traga o resultado para a mesma pág que estamos e não mude de página.
+    </script>
+</body>
+</html>

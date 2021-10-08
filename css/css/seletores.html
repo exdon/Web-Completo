@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        *{ /* *Seletor universal, seleciona todo mundo */
+            color: #ff0;
+            background-color: #f77;
+        }
+        .tag { /* .Seletor de classe */
+            color: #ff0;
+            background-color: #f77
+        }
+        #aprovados { /* #Seletor de ID */
+            color: #ff0;
+            background-color: #f77
+        }
+        #aninhado > div { /* pega o elemento div que esteja diretamente dentro desse id# aninhado */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        #aninhado section { /* pega o elemento section que não esta diretamente ligado a id# aninhado, mas contém dentro */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        p + ul { /* seletor de irmão(siblings) que são adjacentes(um está logo em seguida do outro) */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        p ~ ol { /* seletor de irmão(siblings) que não são adjacentes(um não está em seguida do outro), mas pertencem ao mesmo pai */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        [feira] { /* seletor de propriedade. É possivel associar um atributo ao valor. ex [feira=casa]. Quando for valores compostos (escritorio empresa), é necessario colocar os dois [feira=escritorio empresa] ou usar [feira~=escritorio], assim ele irá pegar todos os atributos que tenham escritorio em seus valores separados por espaço (,. não funcionam). [feira*=sa] pega qualquer atributo que em seu valor contenha 'sa'. */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        span:nth-child(1) { /* seleciona o primeiro filho (1) de alguém que é do tipo span */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        section > :nth-child(odd) { /* seleciona dentro de uma section todos os filhos impares (odd). Pares(even) */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        p, section > :nth-child(odd), ol { /* irá aplicar o style abaixo em todos esses elementos especificados dividos por ,(virugula). */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+        section > span:nth-of-type(2) { /* seleciona o segundo(2) elemento do tipo span que está diretamente de section */
+            color: rgb(132, 0, 255);
+            background-color: #f77
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

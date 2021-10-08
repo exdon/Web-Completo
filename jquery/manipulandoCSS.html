@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Manipulando CSS</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Manipulando CSS</h1>
+    <div id='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='resultado'></div>
+    <script>
+        const fonte = $('#div1').css('font-family') // selecionando a fonte atual 
+        $('#resultado').append(`Fonte é ${fonte}`)
+
+        $('#div1').css('font-size', '3em') // altera o fonte-size do elemento
+        $('#div1').css({'font-size': '3.5em', 'color': 'yellow'}) // altera o font-size para 3.5em e a color para yellow.
+        $('#div1').css('font-size', function() {
+            return `${2 * 2}em`
+        })
+
+        $('#div2').addClass('destaque') // add a class css destaque
+
+        const temClasse = $('#div2').hasClass('destaque') // retorna true
+        $('#resultado').append(`<br>It has Class? ${temClasse}`)
+        $('#div2').removeClass('destaque')
+        $('#div2').toggleClass('destaque') // .toggleClass alterna se não tiver, ele add se tiver ele remove.''
+    </script>
+</body>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+       <title>Um pouco de CSS</title>
+       <link rel="stylesheet" href=""> <!--referenciar um arquivo css-->
+       <style>
+           h1 {
+               font-size: 20px;
+           }
+           .fundoVermelho {
+               background-color: #c00;
+           }
+           .negrito {
+               font-weight: bold;
+           }
+           #textoPrincipal {
+               font-size: 40px;
+               font-weight: bold; /* peso da fonte*/
+               background-color: #444;
+               color: #fff;
+               padding: 10px; /* espaçamento */
+           }
+       </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <span id="textoPrincipal"> <!--tag não visual-->
+            texto 1</span><br><br>
+        <span class="fundoVermelho negrito">Texto 2</span><br><br>
+        <span class="fundoVermelho" wm-atrib>Texto 3</span> <!--wm-atrib é um atributo personalizado que posso criar.
+                                                            Para chamar esse atributo no js uso document.QuerySelector('[wm-atrib]')-->
+    </body>
+</html>

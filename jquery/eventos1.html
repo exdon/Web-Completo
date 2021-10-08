@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        input {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Eventos #01</h1>
+    <div id='posicao'></div>
+    <div id='cliques'>Cliques: 0</div>
+    <input type="text" placeholder="Cor de Background">
+
+    <script>
+        function mostrarPosicaoMouse(evento) {
+            $('#posicao').html(`x: ${evento.clientX} y: ${evento.clientY}`)
+        }
+
+        $('body').on('mousemove', mostrarPosicaoMouse) // quando acontecer um evento mousemove, ele chamará a função mostrarPosicaoMouse
+
+        $('#posicao').mouseover(e => {
+            $('body').off('mousemove', mostrarPosicaoMouse) // quando o mouse ficar em cima da div com id posição, o mousemove não estará ativo, ou seja ele para o evento(.off())
+        })
+        $('#posicao').mouseleave(e => {
+            $('body').on('mousemove', mostrarPosicaoMouse)
+        })
+
+        let cliques = 0
+        $('body').click(e => {
+            $('#cliques').html(`Cliques: ${++cliques}`) // incrementa os cliques do mouse na variavel cliques, aumentando o seu número.
+        })
+
+        const backgroundOriginal = $('body').css('background-color') //armazena a cor original do background
+
+        $('input').keyup(function (e) { // keyup pega o valor mais atual. para entender verificar no console
+            const valor = $(this).val() //val pega o valor
+            if (valor.match(/#[\da-fA-F]{3,6}/)) { //expressão regular para configurar o num hexadecimal da cor
+                $('body').css('background-color', valor) // se der match, ele muda a cor
+            } else{
+                $('body').css('background-color', backgroundOriginal) // se não, seta para cor original.
+            }
+        })
+    </script>
+</body>

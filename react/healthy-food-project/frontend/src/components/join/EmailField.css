@@ -1,0 +1,58 @@
+.email--input {
+    position: absolute;
+    width: 50%;
+    left: 70px;
+}
+
+.email--input p {
+    color: #1d164d;
+    font-weight: 700;
+    font-size: 50px;
+    padding-bottom: 30px;
+    text-align: start;
+    margin-top: 150px;
+}
+
+.join--input--field {
+    height: 70px;
+    width: 300px;
+    padding: 0px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.email--input button {
+    height: 70px;
+    padding: 0px 40px;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-color: #badc58;
+    border: solid #badc58;
+}
+
+.email--input button:hover {
+    background-color: #a7c64f;
+    border: #a7c64f;
+}
+
+.email--input span {
+    color: white;
+    font-size: 18px;
+}
+
+.email--input input:-ms-input-placeholder  {
+    font-size: 18px;
+  }
+
+  .email--input input::-webkit-input-placeholder {
+    font-size: 18px;
+  }
+
+.email--input input:-moz-placeholder {
+    font-size: 18px;
+  }
+
+/* firefox 19+ */
+.email--input input::-moz-placeholder {
+    font-size: 18px;
+  }
